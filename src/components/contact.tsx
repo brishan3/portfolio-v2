@@ -1,3 +1,4 @@
+"use client";
 import { Mail, MapPin, PhoneCall } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -7,8 +8,61 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
 import { ScrollView } from "./scroll-view";
+import { useState } from "react";
 
 export default function FeaturesSection() {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-16 md:py-32 bg-gray-50 dark:bg-transparent" id="contact">
       <div className="mx-auto max-w-6xl px-6">
@@ -75,27 +129,49 @@ export default function FeaturesSection() {
                 </div>
 
                 <form
-                  action=""
+                  onSubmit={handleSubmit}
                   className="**:[&>label]:block mt-12 space-y-6 *:space-y-3"
                 >
                   <div>
                     <Label htmlFor="name">Name</Label>
-                    <Input type="text" id="name" required />
+                    <Input 
+                      type="text" 
+                      id="name" 
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      required 
+                    />
                   </div>
 
                   <div>
                     <Label htmlFor="phone">Phone Number</Label>
-                    <Input type="tel" id="phone" />
+                    <Input 
+                      type="tel" 
+                      id="phone" 
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                    />
                   </div>
 
                   <div>
                     <Label htmlFor="email">Email</Label>
-                    <Input type="email" id="email" required />
+                    <Input 
+                      type="email" 
+                      id="email" 
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required 
+                    />
                   </div>
 
                   <div>
                     <Label htmlFor="subject">Subject</Label>
-                    <Input type="text" id="subject" />
+                    <Input 
+                      type="text" 
+                      id="subject" 
+                      value={formData.subject}
+                      onChange={handleInputChange}
+                    />
                   </div>
 
                   {/* <div>
@@ -134,11 +210,35 @@ export default function FeaturesSection() {
                         </div> */}
 
                   <div>
-                    <Label htmlFor="msg">Message</Label>
-                    <Textarea id="msg" rows={3} />
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea 
+                      id="message" 
+                      rows={3} 
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      required
+                    />
                   </div>
 
-                  <Button>Send Message</Button>
+                  {submitStatus === 'success' && (
+                    <div className="p-4 bg-green-50 border border-green-200 rounded-md">
+                      <p className="text-green-800 text-sm">
+                        Thank you! Your message has been sent successfully. I&apos;ll get back to you soon.
+                      </p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="p-4 bg-red-50 border border-red-200 rounded-md">
+                      <p className="text-red-800 text-sm">
+                        Sorry, there was an error sending your message. Please try again or contact me directly.
+                      </p>
+                    </div>
+                  )}
+
+                  <Button type="submit" disabled={isSubmitting}>
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                  </Button>
                 </form>
               </Card>
             </ScrollView>
