@@ -76,16 +76,16 @@ export default function FeaturesSection() {
               </ScrollView>
               <ScrollView>
                 <p className="mt-6">
-                  I am available for freelance or full-time positions. Contact me and let&apos;s talk about how we can work together to bring your ideas to life.
+                  Contact me and let&apos;s talk about how we can work together to bring your ideas to life.
                 </p>
               </ScrollView>
             </div>
             <ScrollView delay={0.2}>
               <ul className="mt-8 divide-y border-y *:flex *:items-center *:gap-3 *:py-3">
                 <li>
-                  <Link href="mailto:brishanking3@gmail.com" className="hover:text-accent-foreground">
+                  <Link href="mailto:brishan.king@gmail.com" className="hover:text-accent-foreground">
                     <Mail className="size-5 mr-2 inline" />
-                    <span>brishanking3@gmail.com</span>
+                    <span>brishan.king@gmail.com</span>
                   </Link>
                 </li>
                 <li>
@@ -105,10 +105,10 @@ export default function FeaturesSection() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="https://brishanking.me" target="_blank" className="hover:text-accent-foreground">
+                  <div className="hover:text-accent-foreground">
                     <MapPin className="size-5 mr-2 inline" />
                     <span>Vancouver, BC, Canada</span>
-                  </Link>
+                  </div>
                 </li>
               </ul>
             </ScrollView>
