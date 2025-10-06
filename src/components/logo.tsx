@@ -5,7 +5,7 @@ import Image from "next/image";
 export const Logo = ({ className }: { className?: string }) => {
   return (
     <div className="flex items-center justify-center">
-      <Image src="/logo.png" className={cn(" dark:hue-rotate-30 dark:invert-25", className)} alt="Logo" width={100} height={47} />
+      <Image src="/logo.png" className={cn(" dark:hue-rotate-30 dark:invert-50", className)} alt="Logo" width={100} height={47} />
       {/* <Image src="/logo-dark-mode.png" className={cn("hidden dark:block", className)} alt="Logo" width={100} height={47} /> */}
     </div>
   );

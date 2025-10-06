@@ -172,12 +172,12 @@ export default function FooterSection() {
             </Link>
           </div>
         </ScrollView>
-        <ScrollView delay={0.2} viewMargin="0px 0px -20px 0px">
+        {/* <ScrollView delay={0.2} viewMargin="0px 0px -20px 0px">
           <span className="text-muted-foreground block text-center text-sm">
             {" "}
             © {new Date().getFullYear()} Lume Studio, All rights reserved
           </span>
-        </ScrollView>
+        </ScrollView> */}
       </div>
     </footer>
   );

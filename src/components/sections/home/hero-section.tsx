@@ -66,7 +66,7 @@ export default function HeroSection() {
                   loop
                   muted
                   preload="auto"
-                  className="size-full object-cover blur-[1px] opacity-100 invert-0 dark:opacity-75 "
+                  className="size-full object-cover blur-[2px] opacity-75 invert-0 dark:opacity-75 "
                 >
                   <source src="/mountain-cinemagraph.mp4" type="video/mp4" />
                 </video>
