@@ -32,7 +32,7 @@ export default function HeroSection() {
     <>
       <div className="overflow-hidden min-h-screen">
         <section>
-          <div className="relative pt-24 md:pt-36">
+          <div className="relative min-h-screen">
             <AnimatedGroup
               variants={{
                 container: {
@@ -60,7 +60,7 @@ export default function HeroSection() {
               }}
               className="absolute inset-0 -z-20"
             >
-              <div className="h-screen xl:h-auto absolute inset-2 -z-10 overflow-hidden rounded-3xl border border-black/10 lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
+              <div className="h-screen w-screen absolute inset-0 -z-10 overflow-hidden">
                 <video
                   autoPlay
                   loop
@@ -74,7 +74,7 @@ export default function HeroSection() {
             </AnimatedGroup>
 
             <div className="absolute inset-0 -z-10 size-full "></div>
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="mx-auto max-w-7xl px-6 relative z-10 flex items-center justify-center min-h-screen">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 {/* <AnimatedGroup variants={transitionVariants}>
                   <Link
