@@ -31,7 +31,7 @@ export default function StatsSection() {
               }}
               className="space-y-4"
             >
-              <div className="text-5xl font-bold">+7</div>
+              <div className="text-5xl font-bold">+8</div>
               <p>Projects Launched</p>
             </motion.div>
             {/* <motion.div
