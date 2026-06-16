@@ -12,12 +12,9 @@ export default function HeroSection() {
 
   return (
     <section
-      className="site-texture relative isolate flex min-h-[100svh] overflow-hidden pt-24"
+      className="relative isolate flex min-h-[100svh] overflow-hidden pt-24"
       id="home"
     >
-      <div className="archive-grid absolute inset-0 -z-30 opacity-70" />
-      <div className="contour-field absolute inset-0 -z-20 opacity-80 [mask-image:linear-gradient(to_bottom,black,transparent_82%)]" />
-      <div className="paper-grain absolute inset-0 -z-10 opacity-[0.14] mix-blend-multiply dark:mix-blend-screen" />
       <div className="ambient-orb left-[-8rem] top-24 -z-10 size-80 bg-sage/35" />
       <div className="ambient-orb bottom-8 right-[-6rem] -z-10 size-96 bg-taupe/45 [animation-delay:2s]" />
 

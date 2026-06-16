@@ -9,7 +9,7 @@ import { Github, Linkedin } from "lucide-react";
 export default function FooterSection() {
   return (
     <footer className="relative overflow-hidden py-16">
-      <div className="paper-grain absolute inset-0 -z-10 opacity-[0.08]" />
+      <div className="paper-grain texture-soft-mask absolute inset-x-0 -top-20 -z-10 h-80 opacity-[0.06]" />
       <div className="section-shell">
         <ScrollView>
           <div className="depth-card rounded-[2rem] p-6 md:p-8">

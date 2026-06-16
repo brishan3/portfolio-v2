@@ -137,8 +137,7 @@
     @apply bg-background text-foreground font-sans;
     background-image:
       radial-gradient(circle at top left, oklch(0.83 0.06 142 / 32%), transparent 34rem),
-      radial-gradient(circle at bottom right, oklch(0.78 0.07 58 / 26%), transparent 30rem),
-      linear-gradient(115deg, oklch(0.2 0.026 118 / 4%) 0 1px, transparent 1px 12px);
+      radial-gradient(circle at bottom right, oklch(0.78 0.07 58 / 26%), transparent 30rem);
     background-attachment: fixed;
   }
   h1,
@@ -172,11 +171,45 @@
   }
 
   .archive-grid {
+    background-image: none;
+  }
+
+  .site-backdrop {
+    @apply relative isolate overflow-hidden;
+  }
+
+  .site-backdrop::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -30;
+    pointer-events: none;
     background-image:
-      linear-gradient(to right, oklch(0.4 0.06 145 / 10%) 1px, transparent 1px),
-      linear-gradient(to bottom, oklch(0.4 0.06 145 / 7%) 1px, transparent 1px),
-      radial-gradient(circle at 50% 50%, oklch(0.65 0.07 58 / 10%) 1px, transparent 1.5px);
-    background-size: 4rem 4rem;
+      radial-gradient(circle at 12% 5%, oklch(0.76 0.06 142 / 18%), transparent 28rem),
+      radial-gradient(circle at 85% 18%, oklch(0.65 0.07 58 / 14%), transparent 24rem),
+      radial-gradient(circle at 50% 72%, oklch(0.84 0.042 67 / 16%), transparent 34rem),
+      repeating-radial-gradient(ellipse at 72% 10%, transparent 0 2.2rem, oklch(0.4 0.06 145 / 4.5%) 2.25rem 2.32rem),
+      repeating-radial-gradient(ellipse at 18% 54%, transparent 0 2.8rem, oklch(0.65 0.07 58 / 4%) 2.86rem 2.92rem);
+    background-size:
+      auto,
+      auto,
+      auto,
+      auto,
+      auto;
+  }
+
+  .site-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -20;
+    pointer-events: none;
+    background-image:
+      radial-gradient(circle at 12% 18%, oklch(0.2 0.026 118 / 10%) 0 1px, transparent 1.5px),
+      radial-gradient(circle at 72% 64%, oklch(0.65 0.07 58 / 10%) 0 1px, transparent 1.5px);
+    background-size: 18px 18px, 23px 23px;
+    mix-blend-mode: multiply;
+    opacity: 0.1;
   }
 
   .site-texture {
@@ -188,8 +221,12 @@
 
   .contour-field {
     background-image:
-      repeating-radial-gradient(ellipse at 75% 18%, transparent 0 2.2rem, oklch(0.4 0.06 145 / 12%) 2.25rem 2.32rem),
-      repeating-radial-gradient(ellipse at 15% 78%, transparent 0 2.8rem, oklch(0.65 0.07 58 / 10%) 2.86rem 2.92rem);
+      repeating-radial-gradient(ellipse at 75% 18%, transparent 0 2.2rem, oklch(0.4 0.06 145 / 6%) 2.25rem 2.32rem),
+      repeating-radial-gradient(ellipse at 15% 78%, transparent 0 2.8rem, oklch(0.65 0.07 58 / 5%) 2.86rem 2.92rem);
+  }
+
+  .texture-soft-mask {
+    mask-image: linear-gradient(to bottom, transparent, black 22%, black 78%, transparent);
   }
 
   .paper-grain {
@@ -216,8 +253,7 @@
 .dark body {
   background-image:
     radial-gradient(circle at top left, oklch(0.39 0.05 142 / 26%), transparent 34rem),
-    radial-gradient(circle at bottom right, oklch(0.66 0.075 58 / 12%), transparent 30rem),
-    linear-gradient(115deg, oklch(0.91 0.025 84 / 4%) 0 1px, transparent 1px 12px);
+    radial-gradient(circle at bottom right, oklch(0.66 0.075 58 / 12%), transparent 30rem);
 }
 
 .dark .surface-card,
@@ -227,17 +263,28 @@
     inset 0 1px 0 oklch(1 0 0 / 10%);
 }
 
-.dark .archive-grid {
+.dark .site-backdrop::before {
   background-image:
-    linear-gradient(to right, oklch(0.74 0.07 142 / 8%) 1px, transparent 1px),
-    linear-gradient(to bottom, oklch(0.74 0.07 142 / 5%) 1px, transparent 1px),
-    radial-gradient(circle at 50% 50%, oklch(0.91 0.025 84 / 8%) 1px, transparent 1.5px);
+    radial-gradient(circle at 12% 5%, oklch(0.39 0.05 142 / 20%), transparent 28rem),
+    radial-gradient(circle at 85% 18%, oklch(0.66 0.075 58 / 10%), transparent 24rem),
+    radial-gradient(circle at 50% 72%, oklch(0.27 0.03 105 / 18%), transparent 34rem),
+    repeating-radial-gradient(ellipse at 72% 10%, transparent 0 2.2rem, oklch(0.74 0.07 142 / 5%) 2.25rem 2.32rem),
+    repeating-radial-gradient(ellipse at 18% 54%, transparent 0 2.8rem, oklch(0.66 0.075 58 / 4%) 2.86rem 2.92rem);
+}
+
+.dark .site-backdrop::after {
+  mix-blend-mode: screen;
+  opacity: 0.12;
+}
+
+.dark .archive-grid {
+  background-image: none;
 }
 
 .dark .contour-field {
   background-image:
-    repeating-radial-gradient(ellipse at 75% 18%, transparent 0 2.2rem, oklch(0.74 0.07 142 / 13%) 2.25rem 2.32rem),
-    repeating-radial-gradient(ellipse at 15% 78%, transparent 0 2.8rem, oklch(0.66 0.075 58 / 9%) 2.86rem 2.92rem);
+    repeating-radial-gradient(ellipse at 75% 18%, transparent 0 2.2rem, oklch(0.74 0.07 142 / 7%) 2.25rem 2.32rem),
+    repeating-radial-gradient(ellipse at 15% 78%, transparent 0 2.8rem, oklch(0.66 0.075 58 / 5%) 2.86rem 2.92rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

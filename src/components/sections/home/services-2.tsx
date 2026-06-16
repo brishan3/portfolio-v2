@@ -5,7 +5,7 @@ import { SERVICES_LIST } from "@/content/services";
 export default function ServicesSection2() {
   return (
     <section className="relative overflow-hidden py-20 md:py-28" id="services">
-      <div className="contour-field absolute inset-x-0 top-10 -z-10 h-72 opacity-25" />
+      <div className="contour-field texture-soft-mask absolute inset-x-0 -top-28 -z-10 h-[32rem] opacity-10" />
       <div className="section-shell space-y-12">
         <div className="relative z-10 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end">
           <ScrollView>

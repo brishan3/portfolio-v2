@@ -66,7 +66,7 @@ export default function FeaturesSection() {
   return (
     <section className="relative overflow-hidden py-20 md:py-32" id="contact">
       <div className="ambient-orb left-[-10rem] top-10 -z-10 size-72 bg-taupe/35" />
-      <div className="contour-field absolute inset-x-0 bottom-0 -z-10 h-80 opacity-25" />
+      <div className="contour-field texture-soft-mask absolute inset-x-0 -bottom-20 -z-10 h-[30rem] opacity-10" />
       <div className="section-shell">
         <div className="grid items-start gap-10 lg:grid-cols-5 lg:gap-16">
           <div className="lg:col-span-2">

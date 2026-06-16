@@ -7,7 +7,7 @@ import ContactSection from "@/components/contact";
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="site-backdrop min-h-screen">
       <HeroSection />
       <PortfolioSection />
       <AboutUsSection />

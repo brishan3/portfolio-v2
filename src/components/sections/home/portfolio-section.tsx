@@ -5,11 +5,11 @@ import { ScrollView } from "@/components/scroll-view";
 export default function PortfolioSection() {
   return (
     <section
-      className="site-texture relative scroll-mt-28 overflow-hidden py-20 md:py-28"
+      className="relative scroll-mt-28 overflow-hidden py-20 md:py-28"
       id="portfolio"
     >
       <div className="ambient-orb right-[-10rem] top-24 -z-10 size-72 bg-sage/25" />
-      <div className="contour-field absolute inset-x-0 top-0 -z-10 h-80 opacity-35" />
+      <div className="contour-field texture-soft-mask absolute inset-x-0 -top-32 -z-10 h-[34rem] opacity-10" />
       <div className="section-shell space-y-14">
         <div className="relative z-10 grid items-end gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <ScrollView>
