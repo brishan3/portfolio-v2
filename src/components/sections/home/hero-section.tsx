@@ -33,8 +33,8 @@ export default function HeroSection() {
             </span>
           </div>
 
-          <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.94] text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[33rem]">
-            Eight launched sites. Built from interface to infrastructure.
+          <h1 className="max-w-[52rem] text-balance text-5xl font-semibold leading-[0.94] text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[33rem]">
+            Pragmatic full-stack web development for working businesses.
           </h1>
 
           <p className="mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-lg">
