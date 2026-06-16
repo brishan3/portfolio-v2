@@ -1,12 +1,19 @@
 import { cn } from "@/lib/utils";
-import { motion } from "motion/react";
-import Image from "next/image";
 
 export const Logo = ({ className }: { className?: string }) => {
   return (
-    <div className="flex items-center justify-center">
-      <Image src="/logo.png" className={cn(" dark:hue-rotate-30 dark:invert-50", className)} alt="Logo" width={100} height={47} />
-      {/* <Image src="/logo-dark-mode.png" className={cn("hidden dark:block", className)} alt="Logo" width={100} height={47} /> */}
+    <div
+      className={cn(
+        "flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em]",
+        className
+      )}
+    >
+      <div className="size-8 flex items-center justify-center rounded-full border bg-card text-primary">
+        <span className="ml-0.5 mt-0.5">
+          BK
+        </span>
+      </div>
+      <span className="hidden sm:inline">Brishan King</span>
     </div>
   );
 };

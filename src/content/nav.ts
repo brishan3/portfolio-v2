@@ -4,16 +4,16 @@ export const NAV_LINKS = [
     href: "/",
   },
   {
+    name: "Projects",
+    href: "#portfolio",
+  },
+  {
     name: "About",
     href: "#about",
   },
   {
-    name: "Skills",
+    name: "Stack",
     href: "#services",
-  },
-  {
-    name: "Projects",
-    href: "#portfolio",
   },
   {
     name: "Contact",

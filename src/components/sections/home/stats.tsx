@@ -9,12 +9,14 @@ export default function StatsSection() {
         <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
           <ScrollView>
             <h2 className="text-4xl font-medium lg:text-5xl">
-              Driven by Code. Backed by Results.
+              A small archive of shipped decisions.
             </h2>
           </ScrollView>
           <ScrollView delay={0.2}>
             <p>
-              I don&apos;t just write code — I create thoughtful software solutions that help businesses grow, connect with their users, and stand out in the digital landscape through modern, scalable applications.
+              The through-line is practical launch work: clear interfaces,
+              maintainable content systems, search, payments, email, and enough
+              polish that the project feels ready when it goes live.
             </p>
           </ScrollView>
         </div>
@@ -22,25 +24,23 @@ export default function StatsSection() {
           <div className="grid gap-12 divide-y *:text-center md:grid-cols-2 md:gap-2 md:divide-x md:divide-y-0">
             <motion.div
               variants={{
-                hidden: { opacity: 0, scale: 0.8, filter: "blur(10px)" },
+                hidden: { opacity: 0, scale: 0.96 },
                 visible: {
                   opacity: 1,
                   scale: 1,
-                  filter: "blur(0px)",
                 },
               }}
               className="space-y-4"
             >
               <div className="text-5xl font-bold">+8</div>
-              <p>Projects Launched</p>
+              <p>Launched sites and products</p>
             </motion.div>
             {/* <motion.div
               variants={{
-                hidden: { opacity: 0, scale: 0.8, filter: "blur(10px)" },
+                hidden: { opacity: 0, scale: 0.96 },
                 visible: {
                   opacity: 1,
                   scale: 1,
-                  filter: "blur(0px)",
                 },
               }}
               className="space-y-4"
@@ -60,7 +60,7 @@ export default function StatsSection() {
               className="space-y-4"
             >
               <div className="text-5xl font-bold">5+</div>
-              <p>Years in the Game</p>
+              <p>Years shipping client work</p>
             </motion.div>
           </div>
         </ScrollView>

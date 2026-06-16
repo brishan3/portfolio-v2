@@ -17,11 +17,10 @@ export function ScrollView({
   return (
     <InView
       variants={{
-        hidden: { opacity: 0, y: 20, filter: "blur(12px)" },
+        hidden: { opacity: 0, y: 18 },
         visible: {
           opacity: 1,
           y: 0,
-          filter: "blur(0px)",
           transition: {
             delay: delay,
             staggerChildren: stagger ? 0.09 : 0,
@@ -47,11 +46,10 @@ export function ScrollViewStaggerWrapper({
   return (
     <motion.div
       variants={{
-        hidden: { opacity: 0, scale: 0.8, filter: "blur(10px)" },
+        hidden: { opacity: 0, scale: 0.96 },
         visible: {
           opacity: 1,
           scale: 1,
-          filter: "blur(0px)",
         },
       }}
       className={className}

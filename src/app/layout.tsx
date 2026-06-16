@@ -1,22 +1,35 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  Cormorant_Garamond,
+  IBM_Plex_Mono,
+  Source_Sans_3,
+} from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { HeroHeader } from "@/components/header";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const display = Cormorant_Garamond({
+  variable: "--font-display-source",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = IBM_Plex_Mono({
+  variable: "--font-mono-source",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const body = Source_Sans_3({
+  variable: "--font-body-source",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
-  title: "Brishan King - Full-Stack Developer",
-  description: "Full-Stack Software Developer specializing in React, Next.js, Node.js, and modern web technologies. Available for freelance and full-time opportunities.",
+  title: "Brishan King - Project Showcase",
+  description:
+    "A project-first portfolio for Brishan King, a full-stack developer building polished web applications with React, Next.js, Node.js, and modern product tooling.",
 };
 
 export default function RootLayout({
@@ -30,7 +43,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${display.variable} ${mono.variable} ${body.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"

@@ -1,75 +1,73 @@
-import { Circle, Cpu, Lock, Sparkles, Zap } from "lucide-react";
+import { Circle } from "lucide-react";
 import { ScrollView } from "./scroll-view";
-import Image from "next/image";
 
 const mySkills = [
   {
-    title: "Full-Stack Development",
+    title: "Full-stack build",
     description:
-      "Expertise in modern web technologies from frontend React/Next.js to backend Node.js and database design.",
+      "Comfortable moving from interface polish to APIs, databases, auth, payments, and deployment.",
   },
   {
-    title: "Continuous Learning",
+    title: "Product-minded",
     description:
-      "Always exploring new technologies and best practices to deliver cutting-edge solutions.",
+      "I care about the path users take through a product, not just the code that powers it.",
   },
   {
-    title: "Problem Solving",
+    title: "Calm collaboration",
     description:
-      "Passionate about tackling complex challenges and creating elegant solutions for real-world problems.",
-  },
-  {
-    title: "Collaboration Focus",
-    description:
-      "Strong communication skills with experience as a Teaching Assistant and team collaboration.",
+      "Teaching assistant and client-facing experience shaped a clear, practical communication style.",
   },
 ];
 
 export default function ContentSection() {
   return (
-    <section className="py-16 md:py-32" id="about">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-12">
-        <div className="mx-auto max-w-xl space-y-6 text-center md:space-y-12">
+    <section className="py-20 md:py-28" id="about">
+      <div className="section-shell">
+        <div className="depth-card grid gap-10 rounded-[2rem] p-6 md:grid-cols-[0.85fr_1.15fr] md:p-10">
           <ScrollView>
-            <h2 className="text-balance text-4xl font-medium lg:text-5xl">
-              Who I Am
-            </h2>
+            <div className="space-y-4">
+              <span className="eyebrow">About</span>
+              <h2 className="text-balance text-5xl font-semibold leading-none md:text-6xl">
+                Developer with an eye for useful details.
+              </h2>
+            </div>
           </ScrollView>
-          <ScrollView>
-            <p>
-              My post-secondary educational journey began with a solid foundation in Computing Science at Simon Fraser University, followed by specialized training in a Web Development bootcamp at BrainStation. This formal education, combined with my professional experience as both a Web Development Teaching Assistant and Full-Stack Developer, has equipped me with a robust skill set in full-stack software development.
-            </p>
-            <br />
-            <p>
-              My goal is to leverage my technical knowledge and creative aptitude to develop web and software solutions that address real-world challenges. I am open to collaborating on new projects and engaging in opportunities that foster professional growth and innovation.
-            </p>
-          </ScrollView>
-        </div>
-        <ScrollView>
-          <Image
-            className="rounded-(--radius) grayscale-50 object-cover aspect-[3/2] w-full"
-            src="/images/retro-tech-graphic.png"
-            alt="retro tech graphic"
-            height="1024"
-            width="1436"
-            loading="lazy"
-          />
-        </ScrollView>
-        <ScrollView>
-          <div className="relative mx-auto grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-8 lg:grid-cols-4">
-            {mySkills.map((skill, index) => (
-              <div className="space-y-3" key={index}>
-                <div className="flex items-center gap-2">
-                  <Circle className="size-4" />
-                  <h3 className="text-sm font-medium">{skill.title}</h3>
-                </div>
-                <p className="text-muted-foreground text-sm">
-                  {skill.description}
+
+          <div className="space-y-8">
+            <ScrollView delay={0.1}>
+              <div className="space-y-4">
+                <p>
+                  My background combines Computing Science studies at Simon
+                  Fraser University, focused web development training at
+                  BrainStation, and hands-on work as a Teaching Assistant and
+                  Full-Stack Developer.
+                </p>
+                <p>
+                  I like building practical web products that feel considered:
+                  clean interfaces, reliable systems, and enough restraint to
+                  let the work speak.
                 </p>
               </div>
-            ))}
+            </ScrollView>
+
+            <ScrollView stagger delay={0.08}>
+              <div className="grid gap-4 sm:grid-cols-3">
+                {mySkills.map((skill) => (
+                  <div
+                    className="rounded-2xl border bg-background/60 p-4 shadow-inner"
+                    key={skill.title}
+                  >
+                    <div className="mb-3 flex items-center gap-2">
+                      <Circle className="size-3 fill-primary text-primary" />
+                      <h3 className="text-sm font-semibold">{skill.title}</h3>
+                    </div>
+                    <p className="text-sm">{skill.description}</p>
+                  </div>
+                ))}
+              </div>
+            </ScrollView>
           </div>
-        </ScrollView>
+        </div>
       </div>
     </section>
   );

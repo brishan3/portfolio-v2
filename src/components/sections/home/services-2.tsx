@@ -1,120 +1,57 @@
-import { CustomCursorElement } from "@/components/custom-cursor-element";
-import { InView } from "@/components/motion-primitives/in-view";
 import { ScrollView, ScrollViewStaggerWrapper } from "@/components/scroll-view";
 import { Badge } from "@/components/ui/badge";
 import { SERVICES_LIST } from "@/content/services";
-import Image from "next/image";
-import Link from "next/link";
 
 export default function ServicesSection2() {
   return (
-    <section className="py-16 md:py-32" id="services">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
+    <section className="relative overflow-hidden py-20 md:py-28" id="services">
+      <div className="contour-field absolute inset-x-0 top-10 -z-10 h-72 opacity-25" />
+      <div className="section-shell space-y-12">
+        <div className="relative z-10 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end">
           <ScrollView>
-            <h2 className="text-4xl font-medium lg:text-5xl">
-              What I Can Do
-            </h2>
+            <div className="space-y-4">
+              <span className="eyebrow">Capabilities</span>
+              <h2 className="text-balance text-5xl font-semibold leading-none md:text-6xl">
+                The stack behind the work.
+              </h2>
+            </div>
           </ScrollView>
           <ScrollView delay={0.2}>
-            <p>
-              I specialize in full-stack web development, creating modern applications that solve real-world problems. <br /> From responsive frontend interfaces to robust backend systems, <br /> I build complete solutions using cutting-edge technologies.
+            <p className="max-w-2xl md:ml-auto">
+              A concise snapshot of the tools and systems I reach for across
+              project builds, from front-end polish to CMS workflows, payments,
+              search, and backend foundations.
             </p>
           </ScrollView>
         </div>
-        <div className="mt-12 md:mt-24">
-          <div className="space-y-10">
-            {SERVICES_LIST.map((service, index) => (
-              <div
-                key={service.name}
-                className="group overflow-hidden border-b py-10"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-5 gap-10">
-                  <div className="self-end lg:col-span-2">
-                    <div className="flex flex-col gap-8 ">
-                      <div className="space-y-4">
-                        <ScrollView>
-                          <h3 className="text-title text-2xl font-medium">
-                            {service.name}
-                          </h3>
-                        </ScrollView>
 
-                        <ScrollView stagger delay={0.04}>
-                          <div>
-                            {service.tags.map((tag, index) => (
-                              <div key={index} className="inline-block">
-                                <ScrollViewStaggerWrapper>
-                                  <Badge
-                                    className="mr-2 mb-2"
-                                    variant="secondary"
-                                  >
-                                    {tag}
-                                  </Badge>
-                                </ScrollViewStaggerWrapper>
-                              </div>
-                            ))}
-                          </div>
-                        </ScrollView>
-                      </div>
-                      <ScrollView delay={0.04}>
-                        <p className="text-muted-foreground">
-                          {service.description}
-                        </p>
-                      </ScrollView>
-                    </div>
-                  </div>
-                  <div className=" lg:col-span-3">
-                    {/* <CustomCursorElement
-                      cursor={
-                        <div className="text-zinc-950 text-lg font-medium">
-                          View
-                        </div>
-                      }
-                    > */}
-                      <InView
-                        variants={{
-                          hidden: {
-                            opacity: 0,
-                            y: 20,
-                            filter: "blur(14px)",
-                            scale: 0.5,
-                            originX: 0,
-                            originY: 0,
-                          },
-                          visible: {
-                            opacity: 1,
-                            scale: 1,
-                            y: 0,
-                            filter: "blur(0px)",
-                            transition: {
-                              delay: 0.01,
-                              duration: 0.5,
-                            },
-                          },
-                        }}
-                        viewOptions={{
-                          margin: "0px 0px -250px 0px",
-                          once: true,
-                        }}
-                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                      >
-                        {/* <Link href={service.url}> */}
-                          <Image
-                            src={service.img}
-                            alt={service.name}
-                            height="480"
-                            width="720"
-                            loading="lazy"
-                            className=" object-cover object-top  transition-all duration-500 w-full  aspect-[16/9]"
-                          />
-                        {/* </Link> */}
-                      </InView>
-                    {/* </CustomCursorElement> */}
-                  </div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {SERVICES_LIST.map((service, index) => (
+            <ScrollView key={service.name} delay={index * 0.05}>
+              <div className="depth-card h-full rounded-[1.75rem] p-6 transition-colors duration-300 hover:border-primary/40">
+                <div className="mb-5 flex items-center justify-between gap-6">
+                  <h3 className="text-title text-3xl font-semibold leading-none">
+                    {service.name}
+                  </h3>
+                  <span className="text-xs text-muted-foreground">
+                    0{index + 1}
+                  </span>
                 </div>
+                <p className="mb-6 text-sm">{service.description}</p>
+                <ScrollView stagger delay={0.04}>
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <ScrollViewStaggerWrapper key={tag}>
+                        <Badge variant="secondary" className="rounded-full">
+                          {tag}
+                        </Badge>
+                      </ScrollViewStaggerWrapper>
+                    ))}
+                  </div>
+                </ScrollView>
               </div>
-            ))}
-          </div>
+            </ScrollView>
+          ))}
         </div>
       </div>
     </section>

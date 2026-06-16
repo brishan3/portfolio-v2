@@ -1,198 +1,130 @@
-import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Mail, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-import { TextEffect } from "@/components/motion-primitives/text-effect";
-import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
-import LogoCloud from "@/components/sections/home/logo-cloud";
+import { PORTFOLIO_CONTENT } from "@/content/portfolio";
 
-const transitionVariants = {
-  item: {
-    hidden: {
-      opacity: 0,
-      filter: "blur(12px)",
-      y: 12,
-    },
-    visible: {
-      opacity: 1,
-      filter: "blur(0px)",
-      y: 0,
-      transition: {
-        type: "spring",
-        bounce: 0.3,
-        duration: 1.5,
-      },
-    },
-  },
-};
+const featuredProjects = PORTFOLIO_CONTENT.slice(0, 4);
 
 export default function HeroSection() {
+  const [primaryProject] = featuredProjects;
+
   return (
-    <>
-      <div className="overflow-hidden min-h-screen">
-        <section>
-          <div className="relative min-h-screen">
-            <AnimatedGroup
-              variants={{
-                container: {
-                  visible: {
-                    transition: {
-                      delayChildren: 1,
-                    },
-                  },
-                },
-                item: {
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: {
-                      type: "spring",
-                      bounce: 0.3,
-                      duration: 2,
-                    },
-                  },
-                },
-              }}
-              className="absolute inset-0 -z-20"
+    <section
+      className="site-texture relative isolate flex min-h-[100svh] overflow-hidden pt-24"
+      id="home"
+    >
+      <div className="archive-grid absolute inset-0 -z-30 opacity-70" />
+      <div className="contour-field absolute inset-0 -z-20 opacity-80 [mask-image:linear-gradient(to_bottom,black,transparent_82%)]" />
+      <div className="paper-grain absolute inset-0 -z-10 opacity-[0.14] mix-blend-multiply dark:mix-blend-screen" />
+      <div className="ambient-orb left-[-8rem] top-24 -z-10 size-80 bg-sage/35" />
+      <div className="ambient-orb bottom-8 right-[-6rem] -z-10 size-96 bg-taupe/45 [animation-delay:2s]" />
+
+      <div className="section-shell grid items-center gap-8 py-10 md:py-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:pb-24 lg:pt-0">
+        <div className="flex flex-col justify-center items-center text-center lg:items-start lg:text-left">
+          <div className="mb-6 flex flex-wrap items-center gap-3">
+            <span className="eyebrow inline-flex items-center gap-2 rounded-full border bg-card/70 px-4 py-2 backdrop-blur">
+              <Sparkles className="size-3.5" />
+              Project archive
+            </span>
+            <span className="rounded-full border bg-card/70 px-4 py-2 text-xs text-muted-foreground backdrop-blur">
+              8 launched sites
+            </span>
+          </div>
+
+          <h1 className="max-w-4xl text-balance text-5xl font-semibold leading-[0.94] text-foreground sm:text-6xl md:text-7xl lg:text-8xl lg:max-w-[33rem]">
+            Eight launched sites. Built from interface to infrastructure.
+          </h1>
+
+          <p className="mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-lg">
+            Brishan King designs and ships web projects for working businesses:
+            marketing sites, SaaS tools, CMS platforms, payments, search, and
+            the small details that make a launch feel finished.
+          </p>
+
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <Button asChild size="lg" className="rounded-full px-6">
+              <Link href="#portfolio">
+                Open the archive
+                <ArrowRight className="size-4" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="rounded-full px-6"
             >
-              <div className="h-screen w-screen absolute inset-0 -z-10 overflow-hidden">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  preload="auto"
-                  className="size-full object-cover blur-[2px] opacity-75 invert-0 dark:opacity-75 "
-                >
-                  <source src="/mountain-cinemagraph.mp4" type="video/mp4" />
-                </video>
+              <Link href="#contact">
+                <Mail className="size-4" />
+                Start a conversation
+              </Link>
+            </Button>
+          </div>
+        </div>
+        <div className="flex justify-center">
+          <div className="relative min-h-[24rem] md:min-h-[28rem] lg:min-h-[32rem]">
+            <div className="absolute -right-6 top-8 h-56 w-36 rounded-full border border-primary/20 bg-card/45 blur-2xl" />
+            <div className="surface-card group relative z-10 max-w-[34rem] overflow-hidden rounded-[2rem] p-3 transition-transform duration-500 hover:-translate-y-1">
+              <div className="overflow-hidden rounded-[1.55rem] border bg-background shadow-inner">
+                <Image
+                  className="aspect-video w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025]"
+                  height={720}
+                  width={1280}
+                  src={primaryProject.img}
+                  alt={`${primaryProject.name} project screenshot`}
+                  priority
+                />
               </div>
-            </AnimatedGroup>
-
-            <div className="absolute inset-0 -z-10 size-full "></div>
-            <div className="mx-auto max-w-7xl px-6 relative z-10 flex items-center justify-center min-h-screen">
-              <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                {/* <AnimatedGroup variants={transitionVariants}>
-                  <Link
-                    href="#link"
-                    className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1 pl-4 shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950"
-                  >
-                    <span className="text-foreground text-sm">
-                      Introducing Support for AI Models
-                    </span>
-                    <span className="dark:border-background block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>
-
-                    <div className="bg-background group-hover:bg-muted size-6 overflow-hidden rounded-full duration-500">
-                      <div className="flex w-12 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                        <span className="flex size-6">
-                          <ArrowRight className="m-auto size-3" />
-                        </span>
-                      </div>
-                    </div>
-                  </Link>
-                </AnimatedGroup> */}
-
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  as="h1"
-                  className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
+              <div className="grid gap-4 p-5 sm:grid-cols-[1fr_auto]">
+                <div>
+                  <span className="eyebrow mb-2 block">
+                    {primaryProject.role}
+                  </span>
+                  <h2 className="text-title text-3xl font-semibold leading-none sm:text-4xl">
+                    {primaryProject.name}
+                  </h2>
+                </div>
+                <Link
+                  href={primaryProject.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="self-end rounded-full border bg-background px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-card"
                 >
-                  Hi, I&apos;m Brishan! A Full-Stack Software Developer.
-                </TextEffect>
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.5}
-                  as="p"
-                  className="mx-auto mt-8 max-w-2xl text-balance text-lg"
-                >
-                  I am a passionate lifetime learner, always looking for new technologies to experiment with and understand better. Let&apos;s build something together.
-                </TextEffect>
+                  View live
+                </Link>
+                <p className="sm:col-span-2">{primaryProject.description}</p>
+              </div>
+            </div>
 
-                <AnimatedGroup
-                  variants={{
-                    container: {
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.05,
-                          delayChildren: 0.75,
-                        },
-                      },
-                    },
-                    ...transitionVariants,
-                  }}
-                  className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+            <div className="mt-5 grid max-w-[34rem] grid-cols-3 gap-3">
+              {featuredProjects.slice(1).map((project) => (
+                <Link
+                  href={project.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={project.name}
+                  className="depth-card group overflow-hidden rounded-2xl p-2 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/35"
                 >
-                  <div
-                    key={1}
-                    className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5"
-                  >
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-xl px-5 text-base"
-                    >
-                      <Link
-                        href="https://github.com/brishan3"
-                        target="_blank"
-                      >
-                        <svg
-                          className="size-6"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5c.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34c-.46-1.16-1.11-1.47-1.11-1.47c-.91-.62.07-.6.07-.6c1 .07 1.53 1.03 1.53 1.03c.87 1.52 2.34 1.07 2.91.83c.09-.65.35-1.09.63-1.34c-2.22-.25-4.55-1.11-4.55-4.92c0-1.11.38-2 1.03-2.71c-.1-.25-.45-1.29.1-2.64c0 0 .84-.27 2.75 1.02c.79-.22 1.65-.33 2.5-.33s1.71.11 2.5.33c1.91-1.29 2.75-1.02 2.75-1.02c.55 1.35.2 2.39.1 2.64c.65.71 1.03 1.6 1.03 2.71c0 3.82-2.34 4.66-4.57 4.91c.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2"
-                          />
-                        </svg>
-                        <span className="text-nowrap">My Source Code</span>
-                      </Link>
-                    </Button>
+                  <div className="overflow-hidden rounded-xl border bg-background">
+                    <Image
+                      className="aspect-video w-full object-cover object-top"
+                      height={360}
+                      width={640}
+                      src={project.img}
+                      alt={`${project.name} project screenshot`}
+                    />
                   </div>
-                  <Button
-                    key={2}
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="h-10.5 rounded-xl px-5"
-                  >
-                    <Link href="#contact">
-                      <span className="text-nowrap">Let&apos;s Connect</span>
-                    </Link>
-                  </Button>
-                </AnimatedGroup>
-              </div>
+                  <span className="mt-2 block truncate font-mono text-[0.65rem] uppercase tracking-[0.18em] text-muted-foreground transition-colors group-hover:text-primary">
+                    {project.name}
+                  </span>
+                </Link>
+              ))}
             </div>
           </div>
-          {/* <AnimatedGroup
-            variants={{
-              container: {
-                visible: {
-                  transition: {
-                    staggerChildren: 0.05,
-                    delayChildren: 0.85,
-                  },
-                },
-              },
-              ...transitionVariants,
-            }}
-          >
-            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
-              <LogoCloud />
-            </div>
-          </AnimatedGroup> */}
-        </section>
+        </div>
       </div>
-    </>
+    </section>
   );
 }
