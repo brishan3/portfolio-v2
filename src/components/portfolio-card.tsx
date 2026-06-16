@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { CustomCursorElement } from "./custom-cursor-element";
+import { ViewCursorLabel } from "./view-cursor-label";
 import { ScrollView } from "./scroll-view";
 import { Badge } from "./ui/badge";
 import type { PortfolioItem } from "@/content/portfolio";
@@ -12,9 +13,7 @@ export default function PortfolioCard({
 }) {
   return (
     <article>
-      <CustomCursorElement
-        cursor={<div className="text-ink text-lg font-medium">View</div>}
-      >
+      <CustomCursorElement cursor={<ViewCursorLabel />}>
         <ScrollView>
           <a
             href={card.url}

@@ -37,15 +37,12 @@ export default function ContentSection() {
             <ScrollView delay={0.1}>
               <div className="space-y-4">
                 <p>
-                  My background combines Computing Science studies at Simon
-                  Fraser University, focused web development training at
-                  BrainStation, and hands-on work as a Teaching Assistant and
-                  Full-Stack Developer.
+                  My background combines studies at Simon Fraser University in Computing Science, web development training at
+                  BrainStation (with hands-on work as a Teaching Assistant) along with professional experience as a Full-Stack Developer.
                 </p>
                 <p>
-                  I like building practical web products that feel considered:
-                  clean interfaces, reliable systems, and enough restraint to
-                  let the work speak.
+                  I build practical web products that feel considered:
+                  clean interfaces with reliable systems behind them.
                 </p>
               </div>
             </ScrollView>

@@ -4,12 +4,12 @@ export const Logo = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.22em]",
+        "flex items-center gap-2 text-sm font-semibold font-display uppercase tracking-[0.22em]",
         className
       )}
     >
-      <div className="size-8 flex items-center justify-center rounded-full border bg-card text-primary">
-        <span className="ml-0.5 mt-0.5">
+      <div className="size-10 flex items-center justify-center rounded-full border bg-card text-primary">
+        <span className="ml-0.5 mt-0.5 font-bold text-lg">
           BK
         </span>
       </div>
