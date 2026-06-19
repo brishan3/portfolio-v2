@@ -47,7 +47,7 @@ export function CustomCursorElement({
             width: isHovering ? 100 : 16,
             height: isHovering ? 100 : 16,
           }}
-          className="flex items-center justify-center rounded-full bg-gray-500/40 backdrop-blur-md dark:bg-gray-300/40"
+          className="flex items-center justify-center rounded-full bg-gray-500/60 backdrop-blur-md dark:bg-gray-300/40"
         >
           <AnimatePresence>
             {isHovering ? (

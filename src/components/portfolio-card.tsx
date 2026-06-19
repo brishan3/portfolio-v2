@@ -23,7 +23,7 @@ export default function PortfolioCard({
           >
             <div className="overflow-hidden rounded-[1.5rem] border bg-background shadow-inner">
               <Image
-                className="aspect-video w-full object-cover object-top saturate-[0.92] transition-all duration-700 group-hover:scale-[1.035] group-hover:saturate-100"
+                className="aspect-video w-full object-cover object-top saturate-[0.92] transition-all duration-700 group-hover:saturate-100"
                 height="720"
                 width="1280"
                 src={card.img}
