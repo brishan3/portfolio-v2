@@ -108,7 +108,7 @@ function AnimatedPhrase({ from, to }: { from: string; to: string }) {
             className="inline-flex whitespace-nowrap"
           >
             <AnimatedPhrasePart className="text-foreground">
-              {from}
+              {from.charAt(0).toUpperCase() + from.slice(1)}
             </AnimatedPhrasePart>
             <AnimatedPhrasePart className="px-1">to</AnimatedPhrasePart>
             <AnimatedPhrasePart className="text-foreground">
@@ -142,15 +142,15 @@ export function HeroSubheading({ className }: { className?: string }) {
     return (
       <p
         className={cn(
-          "mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-xl",
+          "mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-xl leading-relaxed",
           className,
         )}
       >
-        From <SolutionPhrase from={from} to={to} />
+        <SolutionPhrase from={from} to={to} />
         <br />
-        (<span className="text-regular font-display">
+        <span className="text-regular font-display">
           and all the small details that make a launch feel finished
-        </span>)
+        </span>
       </p>
     );
   }
@@ -158,15 +158,15 @@ export function HeroSubheading({ className }: { className?: string }) {
   return (
     <p
       className={cn(
-        "mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-xl",
+        "mt-4 max-w-2xl text-balance text-base text-muted-foreground md:text-xl leading-relaxed",
         className,
       )}
     >
-      From <AnimatedPhrase from={from} to={to} />
+      <AnimatedPhrase from={from} to={to} />
       <br />
-      (<span className="text-regular font-display">
+      <span className="text-regular font-display">
        and all the small details that make a launch feel finished
-      </span>)
+      </span>
     </p>
   );
 }

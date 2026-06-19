@@ -27,11 +27,11 @@ export function FeaturedProjectCard({ project }: FeaturedProjectCardProps) {
             href={project.url}
             target="_blank"
             rel="noreferrer"
-            className="surface-card group block overflow-hidden rounded-[2rem] p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+            className="surface-card group block overflow-hidden rounded-[1.55rem] p-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           >
-            <div className="overflow-hidden rounded-[1.55rem] border bg-background shadow-inner">
+            <div className="overflow-hidden rounded-[1.25rem] border bg-background shadow-inner">
               <Image
-                className="aspect-video w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.025]"
+                className="aspect-video w-full object-cover object-top transition-transform duration-700"
                 height={720}
                 width={1280}
                 src={project.img}

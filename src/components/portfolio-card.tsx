@@ -33,7 +33,7 @@ export default function PortfolioCard({
             <div className="space-y-5 p-5">
               <div className="flex items-start justify-between gap-6">
                 <div>
-                  <span className="mb-2 block font-mono text-xs uppercase tracking-[0.24em] text-primary">
+                  <span className="mb-2 block font-mono text-xs capitalize tracking-[0.24em] text-primary">
                     {card.role}
                   </span>
                   <h3 className="text-title text-3xl font-semibold leading-none">

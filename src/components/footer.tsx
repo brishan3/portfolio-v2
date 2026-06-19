@@ -18,8 +18,7 @@ export default function FooterSection() {
                 <Logo />
               </Link>
               <p className="max-w-md text-sm">
-                Project-first portfolio for full-stack web work, built with a
-                quiet interface and an earthy palette.
+                Project-first portfolio to showcase my previous work, the tools used, and the outcomes delivered.
               </p>
             </div>
           </div>

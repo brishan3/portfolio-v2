@@ -18,7 +18,7 @@ export default function ServicesSection2() {
           </ScrollView>
           <ScrollView delay={0.2}>
             <p className="max-w-2xl md:ml-auto">
-              A concise snapshot of the tools and systems I reach for across
+              A peek at the tools and systems I reach for across
               project builds, from front-end polish to CMS workflows, payments,
               search, and backend foundations.
             </p>

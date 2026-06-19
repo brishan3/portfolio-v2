@@ -4,16 +4,43 @@ export const Logo = ({ className }: { className?: string }) => {
   return (
     <div
       className={cn(
-        "flex items-center gap-2 text-sm font-semibold font-display uppercase tracking-[0.22em]",
+        "group flex items-center gap-2 text-sm font-semibold font-display uppercase tracking-[0.22em] transition-transform duration-500 ease-out hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:translate-y-0",
         className
       )}
     >
-      <div className="size-10 flex items-center justify-center rounded-full border bg-card text-primary">
-        <span className="ml-0.5 mt-0.5 font-bold text-lg">
-          BK
-        </span>
+      <div className="relative size-14 shrink-0">
+        <div
+          aria-hidden
+          className="absolute inset-0 rounded-full opacity-0 transition-opacity duration-300 group-hover:opacity-100 motion-reduce:group-hover:opacity-0"
+        >
+          <div className="absolute inset-0 animate-[spin_2.4s_linear_infinite] rounded-full bg-[conic-gradient(from_0deg,transparent_0%,var(--color-primary)_22%,transparent_44%,var(--color-primary)_66%,transparent_88%)] motion-reduce:animate-none" />
+        </div>
+
+        <div className="absolute inset-[2px] flex items-center justify-center overflow-hidden rounded-full border bg-card text-primary shadow-sm transition-[background-color,border-color,box-shadow,transform] duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:scale-[0.98] group-hover:border-primary/25 group-hover:bg-primary group-hover:text-primary-foreground group-hover:shadow-lg group-hover:shadow-primary/25 motion-reduce:group-hover:scale-100">
+          <span
+            aria-hidden
+            className="pointer-events-none absolute inset-0 translate-x-[-120%] skew-x-12 bg-linear-to-r from-transparent via-primary-foreground/20 to-transparent opacity-0 transition-[transform,opacity] duration-700 group-hover:translate-x-[120%] group-hover:opacity-100 motion-reduce:group-hover:translate-x-[-120%] motion-reduce:group-hover:opacity-0"
+          />
+
+          <span className="relative flex items-center font-bold text-lg font-mono tracking-tighter">
+            <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:-translate-x-1 motion-reduce:group-hover:translate-x-0">
+              B
+            </span>
+            <span className="mx-px inline-block origin-center transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:rotate-[28deg] group-hover:scale-110 motion-reduce:group-hover:rotate-0 motion-reduce:group-hover:scale-100">
+              /
+            </span>
+            <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-1 motion-reduce:group-hover:translate-x-0">
+              K
+            </span>
+          </span>
+        </div>
       </div>
-      <span className="hidden sm:inline">Brishan King</span>
+
+      <span className="hidden overflow-hidden sm:inline">
+        <span className="inline-block transition-[transform,letter-spacing,color] duration-500 ease-out group-hover:translate-x-0.5 group-hover:text-primary group-hover:tracking-[0.3em] motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:tracking-[0.22em]">
+          Brishan King
+        </span>
+      </span>
     </div>
   );
 };

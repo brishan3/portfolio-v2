@@ -58,7 +58,7 @@ export default function HeroSection() {
             </Button>
           </div>
         </div>
-        <div className="flex justify-center">
+        <div className="flex justify-center md:pt-4">
           <div className="relative min-h-[24rem] md:min-h-[28rem] lg:min-h-[32rem]">
             <div className="absolute -right-6 top-8 h-56 w-36 rounded-full border border-primary/20 bg-card/45 blur-2xl" />
             <FeaturedProjectCard project={primaryProject} />
@@ -70,9 +70,9 @@ export default function HeroSection() {
                   target="_blank"
                   rel="noreferrer"
                   key={project.name}
-                  className="depth-card group overflow-hidden rounded-2xl p-2 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/35"
+                  className="depth-card group overflow-hidden rounded-lg p-2 transition-transform duration-300 hover:-translate-y-1 hover:border-primary/35"
                 >
-                  <div className="overflow-hidden rounded-xl border bg-background">
+                  <div className="overflow-hidden rounded-sm border bg-background">
                     <Image
                       className="aspect-video w-full object-cover object-top"
                       height={360}
@@ -86,6 +86,14 @@ export default function HeroSection() {
                   </span>
                 </Link>
               ))}
+            </div>
+            <div className="mt-4 text-center text-muted-foreground text-sm">
+              <Link
+                href="#portfolio"
+                className="hover:text-primary/80"
+              >
+                View more
+              </Link>
             </div>
           </div>
         </div>

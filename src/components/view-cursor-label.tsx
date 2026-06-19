@@ -1,3 +1,3 @@
 export function ViewCursorLabel() {
-  return <div className="text-background text-lg font-medium font-display">View</div>;
+  return <div className="text-muted text-base font-semibold tracking-wider font-mono dark:text-primary blend-multiply">View</div>;
 }
