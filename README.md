@@ -1,47 +1,59 @@
-# Lume Studio - Next.js Template
+# Brishan King — Portfolio
 
-This project is a Next.js template built with TypeScript, designed for creating stunning websites with smooth animations and modern UI components.
+Personal project showcase for Brishan King, a full-stack developer building polished web applications with React, Next.js, Node.js, and modern product tooling.
 
 ## Getting Started
 
-1.  **Install dependencies:**
+1. **Install dependencies:**
 
-    ```bash
-    pnpm install
-    ```
+   ```bash
+   pnpm install
+   ```
 
-2.  **Run the development server:**
+2. **Run the development server:**
 
-    ```bash
-    pnpm dev
-    ```
+   ```bash
+   pnpm dev
+   ```
 
-    Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-## Deployment
+3. **Production build:**
 
-### Cloudflare Pages
+   ```bash
+   pnpm build
+   pnpm start
+   ```
 
-If you intend to deploy this project using Cloudflare Pages, please use the `cf-pages` branch. This branch contains configurations optimized for Cloudflare Pages deployment.
+## Project Structure
 
-## Key Components
+| Path | Purpose |
+| --- | --- |
+| `src/app/` | Next.js App Router pages and API routes |
+| `src/components/` | UI, layout, and section components |
+| `src/content/` | Portfolio projects, nav, services, and footer copy |
+| `src/hooks/` | Shared React hooks |
 
-### ScrollView Component [`src/components/scroll-view.tsx`](src/components/scroll-view.tsx)
+Site content lives mainly in `src/content/`. Update `portfolio.ts` to add or edit featured projects.
 
-The `ScrollView` component is a utility component that triggers animations when an element becomes visible in the viewport. It's designed to enhance user experience by adding engaging visual effects as users scroll through the page.
+## Sections
 
-## Technologies Used
+- **Hero** — introduction and primary CTA
+- **Projects** — selected client and product work
+- **About** — background and focus
+- **Stack** — tools and technologies
+- **Contact** — form backed by Resend (`src/app/api/contact/`)
+
+## Technologies
 
 - [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [pnpm](https://pnpm.io/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Motion.dev](https://motion.dev/)
+- [Motion](https://motion.dev/)
+- [pnpm](https://pnpm.io/)
+- [Resend](https://resend.com/) (contact form)
 
 ## License
 
 MIT
-
-## Full version
-
-For the full version, go to https://lume.kohi.studio/full-version
