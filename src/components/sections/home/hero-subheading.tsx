@@ -165,7 +165,7 @@ export function HeroSubheading({ className }: { className?: string }) {
       <AnimatedPhrase from={from} to={to} />
       <br />
       <span className="text-regular font-display">
-       and all the small details that make a launch feel finished
+        and all the small details that make a launch feel finished
       </span>
     </p>
   );

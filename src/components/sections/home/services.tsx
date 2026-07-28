@@ -1,156 +1,58 @@
-"use client";
-import {
-  MorphingDialog,
-  MorphingDialogTrigger,
-  MorphingDialogContent,
-  MorphingDialogTitle,
-  MorphingDialogImage,
-  MorphingDialogSubtitle,
-  MorphingDialogClose,
-  MorphingDialogDescription,
-  MorphingDialogContainer,
-} from "@/components/motion-primitives/morphing-dialog";
 import { ScrollView, ScrollViewStaggerWrapper } from "@/components/scroll-view";
-import { ArrowRight, PlusIcon } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { SERVICES_LIST } from "@/content/services";
 
-const services = [
-  {
-    title: "Branding",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-    image: "/images/abstract-3.png",
-  },
-  {
-    title: "Branding",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-    image: "/images/abstract-4.png",
-  },
-  {
-    title: "Branding",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor.",
-    image: "/images/abstract-5.png",
-  },
-];
-
-export default function ServicesSection() {
+export default function ServicesSection2() {
   return (
-    <section className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl space-y-8 px-6 md:space-y-16">
-        <div className="relative z-10 mx-auto max-w-xl space-y-6 text-center">
+    <section className="relative overflow-hidden py-20 md:py-28" id="services">
+      <div className="contour-field texture-soft-mask absolute inset-x-0 -top-28 -z-10 h-[32rem] opacity-10" />
+      <div className="section-shell space-y-12">
+        <div className="relative z-10 grid gap-6 md:grid-cols-[0.85fr_1.15fr] md:items-end">
           <ScrollView>
-            <h2 className="text-4xl font-medium lg:text-5xl">
-              Tailus UI in numbers
-            </h2>
+            <div className="space-y-4">
+              <span className="eyebrow">Capabilities</span>
+              <h2 className="text-balance text-5xl font-semibold leading-none md:text-6xl">
+                The stack behind the work.
+              </h2>
+            </div>
           </ScrollView>
           <ScrollView delay={0.2}>
-            <p>
-              Gemini is evolving to be more than just the models. It supports an
-              entire to the APIs and platforms helping developers and businesses
-              innovate.
+            <p className="max-w-2xl md:ml-auto">
+              A peek at the tools and systems I reach for across project builds,
+              from front-end polish to CMS workflows, payments, search, and
+              backend foundations.
             </p>
           </ScrollView>
         </div>
-        <ScrollView stagger delay={0.02}>
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 xl:grid-cols-3">
-            {services.map((service, index) => (
-              <MorphingDialog
-                transition={{
-                  type: "spring",
-                  bounce: 0.05,
-                  duration: 0.25,
-                }}
-                key={service.title + index}
-              >
-                <MorphingDialogTrigger
-                  style={{
-                    borderRadius: "12px",
-                  }}
-                  className="relative  flex aspect-[10/16] flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900"
-                >
-                  <ScrollViewStaggerWrapper className="h-full w-full">
-                    <MorphingDialogImage
-                      src={service.image}
-                      alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
-                      className="h-full w-full   absolute  "
-                    />
-                    <div className="z-10 flex flex-col justify-between h-full w-full py-5 px-4">
-                      <div className="self-end">
-                        <div className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1  shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
-                          <div className="bg-background group-hover:bg-muted size-8 overflow-hidden rounded-full duration-500 -rotate-45 ">
-                            <div className="flex w-16 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
-                              <span className="flex size-8">
-                                <ArrowRight className="m-auto size-4" />
-                              </span>
-                              <span className="flex size-8">
-                                <ArrowRight className="m-auto size-4" />
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex justify-between items-center z-20 p-5 rounded-2xl relative bg-secondary">
-                        <MorphingDialogTitle className="">
-                          {index + 1}
-                        </MorphingDialogTitle>
-                        <MorphingDialogSubtitle className="">
-                          {service.title}
-                        </MorphingDialogSubtitle>
-                      </div>
-                    </div>
-                  </ScrollViewStaggerWrapper>
-                </MorphingDialogTrigger>
-                <MorphingDialogContainer>
-                  <MorphingDialogContent
-                    style={{
-                      borderRadius: "24px",
-                    }}
-                    className="pointer-events-auto relative flex h-auto w-full flex-col overflow-hidden border border-zinc-950/10 bg-white dark:border-zinc-50/10 dark:bg-zinc-900 sm:w-[500px]"
-                  >
-                    <MorphingDialogImage
-                      src={service.image}
-                      alt="A desk lamp designed by Edouard Wilfrid Buquet in 1925. It features a double-arm design and is made from nickel-plated brass, aluminium and varnished wood."
-                      className="h-full w-full"
-                    />
-                    <div className="p-6">
-                      <div className="flex items-center gap-4">
-                        <MorphingDialogTitle className="text-2xl text-zinc-700 dark:text-zinc-400">
-                          {index + 1} {" ."}
-                        </MorphingDialogTitle>
-                        <MorphingDialogSubtitle className="text-2xl text-zinc-950 dark:text-zinc-50">
-                          {service.title}
-                        </MorphingDialogSubtitle>
-                      </div>
-                      <MorphingDialogDescription
-                        disableLayoutAnimation
-                        variants={{
-                          initial: { opacity: 0, scale: 0.8, y: 100 },
-                          animate: { opacity: 1, scale: 1, y: 0 },
-                          exit: { opacity: 0, scale: 0.8, y: 100 },
-                        }}
-                      >
-                        <p className="mt-2 text-zinc-500 dark:text-zinc-500">
-                          {service.description}
-                        </p>
 
-                        <a
-                          className="mt-2 inline-flex text-zinc-500 underline"
-                          href="https://www.are.na/block/12759029"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Are.na block
-                        </a>
-                      </MorphingDialogDescription>
-                    </div>
-                    <MorphingDialogClose className="text-zinc-50" />
-                  </MorphingDialogContent>
-                </MorphingDialogContainer>
-              </MorphingDialog>
-            ))}
-          </div>
-        </ScrollView>
+        <div className="grid gap-4 md:grid-cols-2">
+          {SERVICES_LIST.map((service, index) => (
+            <ScrollView key={service.name} delay={index * 0.05}>
+              <div className="depth-card h-full rounded-[1.75rem] p-6 transition-colors duration-300 hover:border-primary/40">
+                <div className="mb-5 flex items-center justify-between gap-6">
+                  <h3 className="text-title text-3xl font-semibold leading-none">
+                    {service.name}
+                  </h3>
+                  <span className="text-xs text-muted-foreground">
+                    0{index + 1}
+                  </span>
+                </div>
+                <p className="mb-6 text-sm">{service.description}</p>
+                <ScrollView stagger delay={0.04}>
+                  <div className="flex flex-wrap gap-2">
+                    {service.tags.map((tag) => (
+                      <ScrollViewStaggerWrapper key={tag}>
+                        <Badge variant="secondary" className="rounded-full">
+                          {tag}
+                        </Badge>
+                      </ScrollViewStaggerWrapper>
+                    ))}
+                  </div>
+                </ScrollView>
+              </div>
+            </ScrollView>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -22,8 +22,8 @@ export default function PortfolioSection() {
           </ScrollView>
           <ScrollView delay={0.15}>
             <p className="max-w-xl text-center mx-auto lg:ml-auto lg:text-left lg:mr-0 lg:mb-2">
-              Each project is framed by the business it served, the parts
-              I owned, and the outcomes I delivered in my time involved.
+              Each project is framed by the business it served, the parts I
+              owned, and the outcomes I delivered in my time involved.
             </p>
           </ScrollView>
         </div>

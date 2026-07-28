@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
 import { Card } from "@/components/ui/card";
+import { ScrollView } from "@/components/scroll-view";
 import Link from "next/link";
-import { ScrollView } from "./scroll-view";
+
 import { useState } from "react";
 
 export default function FeaturesSection() {
@@ -148,7 +148,8 @@ export default function FeaturesSection() {
                     <Label htmlFor="name">Name</Label>
                     <Input 
                       type="text" 
-                      id="name" 
+                      id="name"
+                      placeholder="John Doe"
                       value={formData.name}
                       onChange={handleInputChange}
                       required 
@@ -160,6 +161,7 @@ export default function FeaturesSection() {
                     <Input 
                       type="email" 
                       id="email" 
+                      placeholder="john.doe@example.com"
                       value={formData.email}
                       onChange={handleInputChange}
                       required 
@@ -171,6 +173,7 @@ export default function FeaturesSection() {
                     <Input 
                       type="text" 
                       id="subject" 
+                      placeholder="Project Inquiry"
                       value={formData.subject}
                       onChange={handleInputChange}
                     />
@@ -181,6 +184,7 @@ export default function FeaturesSection() {
                     <Textarea 
                       id="message" 
                       rows={5} 
+                      placeholder="Tell me about your project..."
                       value={formData.message}
                       onChange={handleInputChange}
                       required

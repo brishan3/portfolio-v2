@@ -1,9 +1,9 @@
-import AboutUsSection from "@/components/sections/home/about-section";
 import HeroSection from "@/components/sections/home/hero-section";
 import PortfolioSection from "@/components/sections/home/portfolio-section";
-import ServicesSection2 from "@/components/sections/home/services-2";
+import AboutUsSection from "@/components/sections/home/about-section";
+import ServicesSection from "@/components/sections/home/services";
+import ContactSection from "@/components/sections/home/contact-section";
 import FooterSection from "@/components/footer";
-import ContactSection from "@/components/contact";
 
 export default function Home() {
   return (
@@ -11,7 +11,7 @@ export default function Home() {
       <HeroSection />
       <PortfolioSection />
       <AboutUsSection />
-      <ServicesSection2 />
+      <ServicesSection />
       <ContactSection />
       <FooterSection />
     </main>
